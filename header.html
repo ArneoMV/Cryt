@@ -1,0 +1,58 @@
+<header class="site--header js-header">
+  <!-- Hamburger -->
+  <div href="#" id="hamburger-btn" class="menu-btn o-media__icon">
+    <span id="hamburger-btn-open" class="icon x is--inactive"></span>
+    <span class="tx--caption animated">Menu</span>
+  </div>
+  
+  <!-- LOGO -->
+  <img src="images/logo/Cryt_white_inline.svg" alt="Cryt logo" style="width: 200px;">
+
+  <!-- Projects -->
+  <a href="#" class="projects-btn o-media__icon tx--gray-light">
+    <span class="tx--caption animated">View Projects</span>
+    <img class="icon icon-projects" src="images/icon_white_rocket.svg" alt="Projects">
+  </a>
+</header>
+
+
+<script>
+$(document).ready(function() {
+  $('#hamburger-btn').on('click', function(){
+    var hasClass =  $('#hamburger-btn-open').hasClass('is--inactive');
+    if (hasClass) {
+      $('#hamburger-btn-open').removeClass('is--inactive');
+      // main
+      $('#cryt-secondary-navigation').css({
+        'visibility' : 'none',
+        'opacity' : '0'
+      });
+      $('#main-brands').css({
+        'visibility' : 'none',
+        'opacity' : '0'
+      });
+      // main nav
+      $('#main-navigation').css({
+        'visibility' : 'inherit',
+        'opacity' : '1'
+      });
+    } else {
+      $('#hamburger-btn-open').addClass('is--inactive');
+      // main
+      $('#cryt-secondary-navigation').css({
+        'visibility' : 'inherit',
+        'opacity' : '1'
+      });
+      $('#main-brands').css({
+        'visibility' : 'inherit',
+        'opacity' : '1'
+      });
+      // main nav
+      $('#main-navigation').css({
+        'visibility' : 'none',
+        'opacity' : '0'
+      });
+    }
+  });
+});
+</script>
